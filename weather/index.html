@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luxury Weather Forecast</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- Search -->
+  <div class="card search">
+    <input id="cityInput" type="text" placeholder="Search city (e.g. Mumbai, London)" aria-label="City name">
+    <button id="searchBtn">Search</button>
+    <button id="locBtn">My location</button>
+    <button id="unitBtn">°C / °F</button>
+  </div>
+
+  <div id="message" class="card msg" hidden></div>
+
+  <div id="weather" hidden>
+    <!-- Current -->
+    <div class="card now">
+      <div class="city" id="city"></div>
+      <div class="date" id="date"></div>
+      <div class="big-icon" id="icon"></div>
+      <div class="temp" id="temp"></div>
+      <div class="desc" id="desc"></div>
+    </div>
+
+    <!-- Details -->
+    <div class="card">
+      <h2>Details</h2>
+      <div class="grid" id="details"></div>
+    </div>
+
+    <!-- Hourly -->
+    <div class="card">
+      <h2>Next 24 hours</h2>
+      <div class="hourly" id="hourly"></div>
+    </div>
+
+    <!-- 7 day -->
+    <div class="card">
+      <h2>7-day forecast</h2>
+      <div id="daily"></div>
+    </div>
+  </div>
+
+  <!-- Overall weather information -->
+  <div class="card info">
+    <h2>Weather basics</h2>
+    <p><b>Temperature</b> – how hot or cold the air is. "Feels like" also counts wind and humidity.</p>
+    <p><b>Humidity</b> – the amount of water vapour in the air. High humidity makes hot days feel heavier.</p>
+    <p><b>Wind speed</b> – air moving from high pressure to low pressure. Measured in km/h.</p>
+    <p><b>Pressure</b> – the weight of the air above us. Falling pressure usually means rain or storms; rising pressure means clear skies.</p>
+    <p><b>UV index</b> – strength of sunlight. 0–2 low, 3–5 moderate, 6–7 high, 8+ very high (use sunscreen).</p>
+    <p><b>Precipitation</b> – any water falling from clouds: rain, drizzle, snow or hail.</p>
+    <p><b>Weather vs climate</b> – weather is what happens today; climate is the average weather over 30 or more years.</p>
+  </div>
+
+  <footer>Data: Open-Meteo.com (free, no API key needed)</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

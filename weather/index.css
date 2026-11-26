@@ -1,0 +1,78 @@
+/* ---------- BASIC SETUP ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(160deg, #1b2a4a, #3b5a8a);
+  transition: background 1s;
+  padding: 20px;
+}
+/* Background changes with the weather (class set by JavaScript) */
+body.sunny  { background: linear-gradient(160deg, #1e6fd9, #f6b94c); }
+body.cloudy { background: linear-gradient(160deg, #4b5563, #9ca3af); }
+body.rainy  { background: linear-gradient(160deg, #1f2a44, #4a6a8f); }
+body.snowy  { background: linear-gradient(160deg, #6b84a3, #dbe6f2); }
+body.night  { background: linear-gradient(160deg, #0b1026, #2a2f63); }
+
+.app { max-width: 900px; margin: auto; }
+
+/* Glass card look */
+.card {
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+h2 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; opacity: .85; }
+
+/* ---------- SEARCH BAR ---------- */
+.search { display: flex; gap: 8px; flex-wrap: wrap; }
+.search input {
+  flex: 1; min-width: 160px; padding: 14px 18px; border: none;
+  border-radius: 14px; font-size: 1rem; outline: none;
+}
+button {
+  padding: 14px 18px; border: none; border-radius: 14px; cursor: pointer;
+  font-size: 1rem; font-weight: 600; background: #fff; color: #1b2a4a;
+}
+button:hover { opacity: .88; }
+button:focus-visible, input:focus-visible { outline: 3px solid #ffd77a; }
+
+/* ---------- CURRENT WEATHER ---------- */
+.now { text-align: center; padding: 30px 20px; }
+.city { font-size: 1.6rem; letter-spacing: .5px; }
+.date { opacity: .8; margin-top: 4px; }
+.big-icon { font-size: 5rem; margin: 10px 0 0; }
+.temp { font-size: 5.5rem; font-weight: 200; line-height: 1; }
+.desc { font-size: 1.2rem; margin-top: 6px; }
+
+/* ---------- DETAIL BOXES ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.box { background: rgba(255,255,255,0.12); border-radius: 16px; padding: 14px; text-align: center; }
+.box span { display: block; font-size: .8rem; opacity: .75; }
+.box b { font-size: 1.25rem; display: block; margin-top: 4px; }
+
+/* ---------- HOURLY (scrolls sideways) ---------- */
+.hourly { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.hour { min-width: 74px; text-align: center; background: rgba(255,255,255,0.12); border-radius: 16px; padding: 12px 8px; }
+.hour div:nth-child(2) { font-size: 1.6rem; margin: 6px 0; }
+
+/* ---------- 7 DAY ---------- */
+.day { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.day:last-child { border: none; }
+.day .name { width: 90px; }
+.day .ic { font-size: 1.5rem; width: 40px; text-align: center; }
+.day .rain { width: 60px; font-size: .85rem; opacity: .8; }
+.day .range { width: 90px; text-align: right; }
+
+/* ---------- INFO SECTION ---------- */
+.info p { line-height: 1.6; margin-bottom: 10px; font-size: .95rem; }
+.msg { text-align: center; padding: 14px; }
+footer { text-align: center; font-size: .8rem; opacity: .7; padding: 10px; }
+
+@media (max-width: 500px) { .temp { font-size: 4.2rem; } }
+@media (prefers-reduced-motion: reduce) { body { transition: none; } }
